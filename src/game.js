@@ -1,7 +1,8 @@
 import {Howl, Howler} from "howler";
+import {parseChart} from "/src/parseChart.js";
 
-
-function playSong() {
+async function playSong() {
+  let chart = await parseChart("songs/Paper Machete/notes.chart");
   let sound = new Howl({
     src: ["songs/Paper Machete/guitar.opus"],
     html5: true,
