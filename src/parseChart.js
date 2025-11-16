@@ -53,6 +53,5 @@ function arrayToObject(arr) {
         }
 
     }
-    console.log(obj.SyncTrack);
     return obj;
 }
