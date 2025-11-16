@@ -21,14 +21,16 @@ async function playSong() {
   ) => {
     let song_time_seconds = sound.seek();
     while (game_time_seconds < song_time_seconds) {
-      if (chart.SyncTrack[current_tick] && chart.SyncTrack[current_tick].B) {
-        bpm = chart.SyncTrack[current_tick].B / 1000;
+      // Check if this tick has a BPM change event
+      const syncEvent = chart.SyncTrack[current_tick];
+      if (syncEvent && syncEvent.B) {
+        bpm = syncEvent.B / 1000;
         seconds_per_tick = 1 / ((bpm / 60) * tick_rate);
-        console.log(seconds_per_tick)
       }
       game_time_seconds += seconds_per_tick;
-      if (current_tick % tick_rate == 0) {
-        console.log("beep",current_tick);
+      // Only log at bar boundaries for debugging (can be removed in production)
+      if (current_tick % tick_rate === 0) {
+        console.log("beep", current_tick);
       }
       current_tick++;
     }
