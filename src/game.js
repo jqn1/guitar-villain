@@ -21,15 +21,12 @@ async function playSong() {
   ) => {
     let song_time_seconds = sound.seek();
     while (game_time_seconds < song_time_seconds) {
-      if (chart.SyncTrack[current_tick] && chart.SyncTrack[current_tick].B) {
-        bpm = chart.SyncTrack[current_tick].B / 1000;
+      const sync_event = chart.SyncTrack[current_tick];
+      if (sync_event &&  sync_event.B) {
+        bpm = sync_event.B / 1000;
         seconds_per_tick = 1 / ((bpm / 60) * tick_rate);
-        console.log(seconds_per_tick)
       }
       game_time_seconds += seconds_per_tick;
-      if (current_tick % tick_rate == 0) {
-        console.log("beep",current_tick);
-      }
       current_tick++;
     }
   },MS_BETWEEN_FRAMES)
