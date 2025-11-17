@@ -39,11 +39,12 @@ export async function playSong() {
   })
   
 }
+const game_container = document.getElementById("game");
 
 (async () => {
   const app = new Application();
   await app.init({ background: '#000000', width: "480", height:"634" });
-  document.body.appendChild(app.canvas); // add app to html body
+  game_container.appendChild(app.canvas); // add app to html body
 
   // create game scene
   const game = await create_game(app);

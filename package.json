@@ -14,6 +14,7 @@
   "dependencies": {
     "@pixi/sound": "^6.0.1",
     "howler": "^2.2.4",
-    "pixi.js": "^8.14.1"
+    "pixi.js": "^8.14.1",
+    "vanjs-core": "^1.6.0"
   }
 }
