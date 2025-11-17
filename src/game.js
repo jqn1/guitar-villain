@@ -1,9 +1,13 @@
 import {Howl, Howler} from "howler";
 import {parseChart} from "/src/parseChart.js";
+import {create_main_menu} from "/src/scenes/main_menu.js";
+import {create_game} from "/src/scenes/game.js";
+import { Application, Assets, Container, Sprite, Text, Rectangle, Texture } from "pixi.js";
+
 const FPS = 60;
 const MS_BETWEEN_FRAMES = (1 / FPS) * 1000;
-async function playSong() {
 
+export async function playSong() {
   let chart = await parseChart("songs/Paper Machete/notes.chart");
   const tick_rate = 192 // hardcoded
   let sound = new Howl({
@@ -34,21 +38,24 @@ async function playSong() {
     clearInterval(interval_id);
   })
   
-  // let sleep_time;
-  // for (let i = 0; i < 90000; i++) { // also hardcoded
-  //   if (chart.SyncTrack[i]) {
-  //     if (chart.SyncTrack[i].B) {
-  //       bpm = chart.SyncTrack[i].B / 1000;
-  //     }
-  //   }
-  //   sleep_time = 1 / (tick_rate * bpm / 60) * 1000;
-  //   if ((i % tick_rate == 0) || i == 0) {
-  //     console.log("tick"+String(i));
-  //   }
-  //   await sleep(sleep_time);
-    
-
-  // }
 }
-let button = document.getElementById("play");
-button.addEventListener("click",playSong)
+
+(async () => {
+  const app = new Application();
+  await app.init({ background: '#000000', width: "480", height:"634" });
+  document.body.appendChild(app.canvas); // add app to html body
+
+  // create game scene
+  const game = await create_game(app);
+  game.scale.set(2);
+
+  // create main menu
+  const main_menu = create_main_menu(app,game);
+
+
+  // Listen for animate update
+  app.ticker.add((time) => {
+    // Continuously rotate the container!
+    // * use delta to create frame-independent transform *
+  });
+})();
