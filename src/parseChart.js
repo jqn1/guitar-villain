@@ -19,7 +19,7 @@ function arrayToObject(arr) {
 
     for (let element of arr) {
         if (element[0] == "[") { // is a field
-            field = element.replace("[","").replace("]","");
+            field = element.slice(1,-1); // remove brackets
             if (field == "SyncTrack") {
                 obj[field] = {};
             }
@@ -28,7 +28,7 @@ function arrayToObject(arr) {
             }
             continue
         }
-        if (element[0] != "{") {
+        if (element[0] !== "{") {
             element = element.trim();
 
             if (field == "SyncTrack") {
@@ -42,7 +42,7 @@ function arrayToObject(arr) {
                 let tick_number = parseInt(element[0]);
                 let event_type = element[2];
                 let event_value = element[3];
-                if (!obj[field][tick_number]) {
+                if (!obj[field][tick_number]) { // initialize field if needed
                     obj[field][tick_number] = {};
                 }
                 obj[field][tick_number][event_type] = parseInt(event_value);
