@@ -1,5 +1,5 @@
 ## Avance de Proyecto: Guitar Villain 
-[Deploy de la pagina](https://dolphin-app-dtkb5.ondigitalocean.app/)
+[Deploy de la pagina](https://dolphin-app-dtkb5.ondigitalocean.app/) (se recomienda bajarle un poco al audio)
 
 Este `README.md` describe el estado actual y los objetivos futuros de **Guitar Villain**, un juego rítmico estilo Guitar Hero desarrollado en JavaScript con estética **Synthwave**.
 
