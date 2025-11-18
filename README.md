@@ -1,13 +1,9 @@
 ## Avance de Proyecto: Guitar Villain 
 [Deploy de la pagina](https://dolphin-app-dtkb5.ondigitalocean.app/) (se recomienda bajarle un poco al audio)
 
-Este `README.md` describe el estado actual y los objetivos futuros de **Guitar Villain**, un juego rítmico estilo Guitar Hero desarrollado en JavaScript con estética **Synthwave**.
-
-***
-
 ### Descripción General del Proyecto
 
-**Guitar Villain** es un juego de ritmo musical para navegadores inspirado en títulos como *Guitar Hero*. El proyecto busca ofrecer una experiencia de juego moderna y visualmente atractiva, utilizando una paleta de colores y una estética que evoca el movimiento **Synthwave** (neón, rejillas, paisajes futuristas).
+**Guitar Villain** es un juego de ritmo musical para navegadores inspirado en títulos como *Guitar Hero*.
 
 | Aspecto | Detalle |
 | :--- | :--- |
@@ -15,7 +11,7 @@ Este `README.md` describe el estado actual y los objetivos futuros de **Guitar V
 | **Gráficos/Renderizado** | [PIXI.js](https://www.pixijs.com/) (para una renderización 2D rápida y eficiente). |
 | **Sonido** | [Howler.js](https://howlerjs.com/) (para gestión de audio). |
 | **Componentes/Estructura** | [VanJS](https://vanjs.org/) (para componentes de UI ligeros). |
-| **Estética** | Synthwave (temática de neón, rejillas, colores brillantes sobre fondos oscuros). |
+| **Estética Objetivo** | Synthwave (temática de neón, rejillas, colores brillantes sobre fondos oscuros). |
 
 ***
 
@@ -25,7 +21,6 @@ Se han implementado los siguientes componentes y funcionalidades principales:
 
 1.  **Reproducción de Música de Fondo:**
     * La canción de fondo comienza a reproducirse automáticamente al iniciar la escena del juego (`src/scenes/main_menu.js` y `src/scenes/game.js`).
-    * *(Nota: Se implementa una advertencia de **Disclaimer: Bajar volumen al apretar play** al inicio por el uso de archivos con derechos de autor).*
 2.  **Mecánica de Botones y Feedback Visual:**
     * Se ha implementado el soporte para **cinco botones de nota** con las teclas: `A`, `S`, `J`, `K`, `L`.
     * Al presionar las teclas, se activa una **animación de feedback visual** correspondiente, simulando la pulsación de un traste o botón.
@@ -36,8 +31,6 @@ Se han implementado los siguientes componentes y funcionalidades principales:
 ***
 
 ###  Próximos Objetivos (`POR HACER`)
-
-Las siguientes funcionalidades son prioritarias para el siguiente ciclo de desarrollo:
 
 1.  **Mecánica de Juego de Notas (`Core Gameplay`):**
     * Implementar la lógica para **mostrar las notas** (`notes`) de la canción bajando por las 5 "cuerdas" (carriles).
@@ -52,5 +45,5 @@ Las siguientes funcionalidades son prioritarias para el siguiente ciclo de desar
 
 ###  Consideraciones de Repositorio
 
-* **Archivos Excluidos:** Las **canciones de música** y los **assets de placeholder** que actualmente tienen derechos de autor se mantendrán **fuera del repositorio** (`.gitignore`) para evitar problemas legales.
-* **Reemplazo de Assets:** Se deberán crear **assets libres de derechos** o específicos del proyecto para reemplazar los placeholders una vez finalizado el desarrollo de las mecánicas.
+* **Archivos Excluidos:** Las **canciones de música** y los **assets de placeholder** con copyright se mantendrán **fuera del repositorio** (`.gitignore`) por las dudas.
+* **Reemplazo de Assets:** Se crearán **assets propios** los placeholders una vez finalizado el desarrollo de las mecánicas.
